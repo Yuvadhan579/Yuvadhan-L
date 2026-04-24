@@ -82,17 +82,84 @@
 ## 🧑‍💻 Me as Code
 
 ```python
-class Developer:
-    def __init__(self):
-        self.name = "Yuvadhan"
-        self.skills = ["Java", "Python", "ML", "React"]
-        self.learning = ["AI", "Deep Learning", "Full Stack"]
+struct Developer {
+    name: &'static str,
+    role: &'static str,
+    education: &'static str,
+    what_i_do: &'static [&'static str],
+    skills: &'static [(&'static str, &'static [&'static str])],
+    currently_learning: &'static [&'static str],
+    connect_me: &'static [&'static str],
+}
 
-    def say_hi(self):
-        print("Let's build something awesome 🚀")
+impl Developer {
+    fn print_profile(&self) {
+        println!("\n=============================");
+        println!("👨‍💻  Developer: {}", self.name);
+        println!("🎓  {}", self.education);
+        println!("🚀  {}", self.role);
+        println!("=============================\n");
 
-me = Developer()
-me.say_hi()
+        println!("🎯 What I Do:");
+        self.what_i_do.iter().for_each(|area| println!("  • {}", area));
+
+        println!("\n🛠️ Skills:");
+        self.skills.iter().for_each(|(category, tools)| {
+            println!("  {}:", category);
+            tools.iter().for_each(|tool| println!("    - {}", tool));
+        });
+
+        println!("\n📚 Currently Learning:");
+        self.currently_learning.iter().for_each(|item| println!("  • {}", item));
+
+        println!("\n🔗 Connect with Me:");
+        self.connect_me.iter().for_each(|link| println!("  {}", link));
+
+        println!("\n🤝 Let's build something impactful together!\n");
+    }
+}
+
+static WHAT_I_DO: &[&str] = &[
+    "🚀 Building Machine Learning models for real-world problems",
+    "📊 Working on Data Analysis & Prediction Systems",
+    "🌐 Developing responsive Web Applications",
+    "🧠 Solving problems using Data Structures & Algorithms",
+    "⚡ Exploring AI & Full Stack Development",
+];
+
+static SKILLS: &[(&str, &[&str])] = &[
+    ("🧑‍💻 Languages", &["Java ☕", "Python 🐍", "C", "C++", "SQL"]),
+    ("🤖 AI/ML", &["Machine Learning", "Pandas", "NumPy", "Streamlit"]),
+    ("🌐 Web Development", &["HTML", "CSS", "React ⚛️", "Bootstrap"]),
+    ("🗄️ Databases", &["MySQL"]),
+    ("⚙️ Tools", &["Git", "GitHub", "VS Code", "Figma"]),
+];
+
+static CURRENTLY_LEARNING: &[&str] = &[
+    "📈 Advanced Machine Learning",
+    "🧠 Deep Learning",
+    "🌐 Full Stack Development",
+];
+
+static CONNECT_ME: &[&str] = &[
+    "💼 LinkedIn: www.linkedin.com/in/yuvadhan-l-748a732a6",
+    "💻 GitHub: https://github.com/Yuvadhan579",
+    "✉️ Email: yuvadhanl09@gmail.com",
+];
+
+fn main() {
+    let yuva = Developer {
+        name: "Yuvadhan L",
+        role: "AI/ML Enthusiast | Aspiring Software Developer",
+        education: "MCA Final Year Student (2027)",
+        what_i_do: WHAT_I_DO,
+        skills: SKILLS,
+        currently_learning: CURRENTLY_LEARNING,
+        connect_me: CONNECT_ME,
+    };
+
+    yuva.print_profile();
+}
 
 
 
