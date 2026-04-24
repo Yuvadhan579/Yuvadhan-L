@@ -63,7 +63,7 @@
 
 ![Stats](https://github-readme-stats.vercel.app/api?username=Yuvadhan579&show_icons=true&theme=tokyonight)
 
-![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Yuvadhan579E&layout=compact&theme=tokyonight)
+![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Yuvadhan579&layout=compact&theme=tokyonight)
 
 ---
 
