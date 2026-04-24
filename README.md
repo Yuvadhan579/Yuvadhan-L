@@ -79,6 +79,12 @@
 
 ---
 
+
+## 🐍 Contribution Snake
+
+![snake](https://github.com/Yuvadhan579/Yuvadhan579/blob/output/github-contribution-grid-snake.svg)
+
+
 ## 🧑‍💻 Me as Code
 
 ```python
